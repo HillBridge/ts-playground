@@ -62,4 +62,35 @@ const info: Info = {
 
 console.log(info.friend?.name)
 console.log(info.friend?.age)
+
+
+// ?? 空值合并运算符
+const message: string | null = null
+const res = message ?? 'default'
+console.log(res)
+
+// 自面量类型与联合类型一起结合使用
+type Direction = 'up' | 'down' | 'left' | 'right'
+
+// 自面量推理
+type RequestMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'
+function request(url: string, method: RequestMethod) {
+
+}
+const requestInfo = {
+    url: 'https://www.baidu.com',
+    method: 'GET'
+}
+
+// 1. as断言模式
+request(requestInfo.url, requestInfo.method as RequestMethod)
+
+// 2. 对实参加类型约束
+const requestInfo2 = {
+    url: 'https://www.baidu.com',
+    method: 'GET' as RequestMethod
+}
+request(requestInfo2.url, requestInfo2.method)
+
+
 export { }
