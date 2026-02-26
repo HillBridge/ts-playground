@@ -60,7 +60,7 @@ const handleMessage = (message: string | number | boolean) => {
 
 handleMessage(1)
 handleMessage('1')
-handleMessage(true)
+handleMessage(false)
 
 // 元组类型
 const info: [string, number, number] = ['qiao', 18, 1.88]
